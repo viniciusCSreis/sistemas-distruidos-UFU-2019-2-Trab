@@ -16,7 +16,7 @@ fun main(args: Array<String>) {
         val reader = BufferedReader(InputStreamReader(connectionSocket.getInputStream()))
         val writer = BufferedWriter(OutputStreamWriter(connectionSocket.getOutputStream()))
 
-        writer.write("*** Welcome to the Calculation Server (Addition Only) ***\r\n")
+        writer.write("*** Welcome to the Calculation Server (Addition Only) ***\n")
         writer.write("*** Please type in the first number and press Enter : \n")
         writer.flush()
         val data1 = reader.readLine().trim { it <= ' ' }
@@ -31,7 +31,7 @@ fun main(args: Array<String>) {
         val result = num1 + num2
         println("Addition operation done ")
 
-        writer.write("\r\n=== Result is  : $result")
+        writer.write("\n=== Result is  : $result")
         writer.flush()
         connectionSocket.close()
     }
